@@ -27,10 +27,20 @@ document.addEventListener('DOMContentLoaded', function () {
         currentEnseignant = enseignant;
         handleModalForm("open");
     }
-
+    
     function listerEnseignants(listEnseignants) {
         const tableBody = document.querySelector('#enseignantTable tbody');
         tableBody.innerHTML = '';
+    
+    function afficherFormulaireAssociation(enseignant) {
+            const enseignantSelect = document.getElementById('enseignantSelect');
+            const coursSelect = document.getElementById('coursSelect');
+        }
+      // Vider les options existantes
+      enseignantSelect.innerHTML = '';
+      coursSelect.innerHTML = '';
+
+      
 
         listEnseignants.forEach(enseignant => {
             const row = document.createElement('tr');
@@ -43,11 +53,21 @@ document.addEventListener('DOMContentLoaded', function () {
             row.insertCell(6).textContent = enseignant.dateNaissance;
 
             const actionCell = row.insertCell(7);
+            
+            // Bouton Voir
             const viewButton = document.createElement('button');
             viewButton.className = 'btn btn-primary';
             viewButton.textContent = 'Voir';
             viewButton.onclick = () => afficherEnseignant(enseignant);
             actionCell.appendChild(viewButton);
+            tableBody.appendChild(row);
+
+            // Bouton "Associer Cours"
+            const associerButton = document.createElement('button');
+            associerButton.className = 'btn btn-warning ms-2';
+            associerButton.textContent = 'Associer';
+            associerButton.onclick = () => afficherFormulaireAssociation(enseignant);
+            actionCell.appendChild(associerButton);
             tableBody.appendChild(row);
         });
     }

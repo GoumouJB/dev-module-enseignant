@@ -92,6 +92,7 @@
                             data-bs-dismiss="modal"
                             aria-label="Close"
                         ></button>
+                        
                     </div>
 
                     <div class="modal-body">
@@ -122,6 +123,7 @@
                             </div>
                         </form>
                     </div>
+
                     <div class="modal-footer">
                         <button class="btn btn-success submit" id="saveButton" style="display: none">Ajouter</button>
                         <button class="btn btn-warning submit" id="editButton" style="display: none">Modifier</button>
@@ -131,6 +133,37 @@
             </div>
         </div>
     </div>
+
+    <!--  associer un enseignant à un cours -->
+<div class="modal fade" id="associationFormContainer">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Associer Enseignant à un Cours</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="associationForm">
+                    <div class="form-group mt-2">
+                        <label for="enseignantSelect">Enseignant</label>
+                        <select class="form-control" id="enseignantSelect">
+                            <!-- Options d'enseignants seront ajoutées dynamiquement -->
+                        </select>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="coursSelect">Cours</label>
+                        <select class="form-control" id="coursSelect">
+                            <!-- Options de cours seront ajoutées dynamiquement -->
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="associerButton">Associer</button>
+            </div>
+        </div>
+    </div>
+</div>
   </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
